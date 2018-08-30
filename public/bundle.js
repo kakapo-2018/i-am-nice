@@ -11708,7 +11708,8 @@ var App = function (_React$Component) {
     _this.state = {
       weapons: 'punch.png',
       health: 10,
-      insult: ''
+      insult: '',
+      beg: ''
     };
     _this.abuse = _this.abuse.bind(_this);
     return _this;
@@ -11719,6 +11720,13 @@ var App = function (_React$Component) {
     value: function abuse(amount) {
       console.log(this.state.health);
       this.setState({ health: health });
+    }
+  }, {
+    key: 'begging',
+    value: function begging(words) {
+      console.log(this.state.beg);
+      this.setState({ beg: beg });
+      // <p>{words}</p>
     }
   }, {
     key: 'render',
@@ -11735,10 +11743,7 @@ var App = function (_React$Component) {
             'I am nice'
           ),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _Home2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/knife', component: _Knife2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/gun', component: _Gun2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/hammer', component: _Hammer2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/punch', component: _Punch2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/knife', component: _Knife2.default, begging: this.begging }),
           _react2.default.createElement(_Verbal2.default, { abuse: this.abuse })
         )
       );
@@ -11852,32 +11857,27 @@ var Home = function Home() {
     _react2.default.createElement(
       _reactRouterDom.Link,
       { to: '/punch' },
-      _react2.default.createElement('img', { src: 'punch.png' }),
-      'punch'
+      _react2.default.createElement('img', { src: 'iconGlove.png' })
     ),
     _react2.default.createElement(
       _reactRouterDom.Link,
       { to: '/knife' },
-      _react2.default.createElement('img', { src: 'knife.png' }),
-      'knife'
+      _react2.default.createElement('img', { src: 'iconKnife.png' })
     ),
     _react2.default.createElement(
       _reactRouterDom.Link,
       { to: '/hammer' },
-      _react2.default.createElement('img', { src: 'hammer.png' }),
-      'hammer'
+      _react2.default.createElement('img', { src: 'iconHammer.png' })
     ),
     _react2.default.createElement(
       _reactRouterDom.Link,
       { to: '/gun' },
-      _react2.default.createElement('img', { src: 'gun.png' }),
-      'gun'
+      _react2.default.createElement('img', { src: 'iconGun.png' })
     ),
     _react2.default.createElement(
       _reactRouterDom.Link,
       { to: '/verbal-abuse' },
-      _react2.default.createElement('img', { src: 'insult.png' }),
-      'Abuse'
+      _react2.default.createElement('img', { src: 'verbalabuseIcon.png' })
     )
   );
 };
@@ -11894,7 +11894,8 @@ exports.default = Home;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Knife;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(6);
 
@@ -11902,18 +11903,67 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Knife(props) {
-  return _react2.default.createElement(
-    "div",
-    null,
-    _react2.default.createElement(
-      "h1",
-      { className: "title" },
-      "knife"
-    ),
-    alert("aie")
-  );
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Knife = function (_React$Component) {
+  _inherits(Knife, _React$Component);
+
+  function Knife(props) {
+    _classCallCheck(this, Knife);
+
+    var _this = _possibleConstructorReturn(this, (Knife.__proto__ || Object.getPrototypeOf(Knife)).call(this, props));
+
+    _this.state = {
+      // health: null,
+      //     beg: '',
+    };
+    return _this;
+  }
+
+  _createClass(Knife, [{
+    key: "startBeg",
+    value: function startBeg() {
+      var begsForLife = ["Please", "I have a family who needs me", "I don't want to die....", "I am afraid of death."];
+
+      var thisBeg = begsForLife[Math.floor(Math.random() * begsForLife.length)];
+
+      return thisBeg;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+          "h1",
+          { className: "title" },
+          "knife"
+        ),
+        this.startBeg()
+      );
+    }
+  }]);
+
+  return Knife;
+}(_react2.default.Component);
+
+/*
+on click of knife object - make appear on page a begging
+
+on click when holding the knife - bleed
+--> start a minus health point 
+
+--> if 3 cuts ---> start a setInterval every 5 secound - 1 health point
+
+*/
+
+
+exports.default = Knife;
 
 /***/ }),
 /* 110 */
@@ -11979,7 +12029,7 @@ document.addEventListener('mousemove', function (e) {
 
     weaponImg.src = weaponImage;
     weaponImg.style.position = 'absolute';
-    weaponImg.style.zIndex = 1;
+    decalImg.style.zIndex = -2;
     weaponImg.style.top = (e.pageY - offset || e.clientY - offset) + 'px';
     weaponImg.style.left = (e.pageX - offset || e.clientX - offset) + 'px';
 }, false);
@@ -11991,7 +12041,7 @@ document.addEventListener('click', function (e) {
     var offset = 120;
 
     decalImg.src = decalImage.src;
-    decalImg.style.zIndex = 0;
+    decalImg.style.zIndex = -1;
 
     decalImg.style.position = 'absolute';
     decalImg.style.height = '150px';
