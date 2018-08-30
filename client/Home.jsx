@@ -14,6 +14,8 @@ const Home = () => {
         <Link to='/hammer'><img src='hammer.png'></img>hammer</Link>
         <Link to='/gun'><img src='gun.png'></img>gun</Link>
 
+        <Link to='/verbal-abuse'><img src='insult.png'></img>Abuse</Link>
+
 
 
       </div>
