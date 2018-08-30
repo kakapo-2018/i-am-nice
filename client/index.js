@@ -17,7 +17,7 @@ document.addEventListener('mousemove', function(e) {
 
     weaponImg.src = weaponImage
     weaponImg.style.position = 'absolute';
-    weaponImg.style.zIndex = 1;
+    decalImg.style.zIndex = -2;
     weaponImg.style.top = (e.pageY - offset || e.clientY - offset) + 'px';
     weaponImg.style.left = (e.pageX - offset || e.clientX- offset) + 'px';
 
@@ -34,7 +34,7 @@ document.addEventListener('click', function(e) {
     let offset = 120;
 
     decalImg.src = decalImage.src;
-    decalImg.style.zIndex = 0;
+    decalImg.style.zIndex = - 1;
 
     decalImg.style.position = 'absolute';
     decalImg.style.height = '150px';

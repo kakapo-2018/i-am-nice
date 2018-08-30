@@ -9,14 +9,12 @@ const Home = () => {
     return (
 
       <div>
-        <Link to='/punch'><img src='punch.png'></img>punch</Link>
-        <Link to='/knife'><img src='knife.png'></img>knife</Link>
-        <Link to='/hammer'><img src='hammer.png'></img>hammer</Link>
-        <Link to='/gun'><img src='gun.png'></img>gun</Link>
+        <Link to='/punch'><img src='iconGlove.png'></img></Link>
+        <Link to='/knife'><img src='iconKnife.png'></img></Link>
+        <Link to='/hammer'><img src='iconHammer.png'></img></Link>
+        <Link to='/gun'><img src='iconGun.png'></img></Link>
 
-        <Link to='/verbal-abuse'><img src='insult.png'></img>Abuse</Link>
-
-
+        <Link to='/verbal-abuse'><img src='verbalabuseIcon.png'></img></Link>
 
       </div>
 
