@@ -32,8 +32,8 @@ export default class Verbal extends React.Component {
   render() {
     return (
       <form onSubmit={this.onSubmit}>
-        <input onChange={this.updateDetails} className={`input ${this.state.insult.length > 2 ? 'is-danger':'is-success'}`} type="text" name="insult" placeholder="Don't..." />
-        <input className="button is-danger" type="submit" />
+        <input onChange={this.updateDetails} type="text" name="insult" placeholder="Don't..." />
+        <input type="submit" />
       </form>
     )
   }
