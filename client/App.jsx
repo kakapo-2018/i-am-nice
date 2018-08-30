@@ -4,6 +4,8 @@ import Knife from './Knife'
 import Gun from './Gun'
 import Hammer from './Hammer'
 import Punch from './Punch'
+import Verbal from './Verbal'
+
 
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 
@@ -31,6 +33,9 @@ class App extends React.Component {
         <Route path='/gun' component={Gun} />
         <Route path='/hammer' component={Hammer} />
         <Route path='/punch' component={Punch} />
+
+        <Route path='/verbal-abuse' component={Verbal} />
+
     
       </div>
     </Router>

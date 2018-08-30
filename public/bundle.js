@@ -11602,6 +11602,10 @@ var _Punch = __webpack_require__(109);
 
 var _Punch2 = _interopRequireDefault(_Punch);
 
+var _Verbal = __webpack_require__(110);
+
+var _Verbal2 = _interopRequireDefault(_Verbal);
+
 var _reactRouterDom = __webpack_require__(94);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -11651,7 +11655,8 @@ var App = function (_React$Component) {
           _react2.default.createElement(_reactRouterDom.Route, { path: '/knife', component: _Knife2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/gun', component: _Gun2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/hammer', component: _Hammer2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/punch', component: _Punch2.default })
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/punch', component: _Punch2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/verbal-abuse', component: _Verbal2.default })
         )
       );
     }
@@ -11784,6 +11789,12 @@ var Home = function Home() {
       { to: '/gun' },
       _react2.default.createElement('img', { src: 'gun.png' }),
       'gun'
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/verbal-abuse' },
+      _react2.default.createElement('img', { src: 'insult.png' }),
+      'Abuse'
     )
   );
 };
@@ -11862,7 +11873,7 @@ function Punch(props) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = AddCat;
+exports.default = Verbal;
 
 var _react = __webpack_require__(6);
 
@@ -11870,14 +11881,14 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function AddCat(props) {
+function Verbal(props) {
   return _react2.default.createElement(
     "div",
     null,
     _react2.default.createElement(
       "h1",
       { className: "title" },
-      "Cat form goes here!"
+      "Don't insult me"
     )
   );
 }
