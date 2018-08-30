@@ -16,14 +16,24 @@ class App extends React.Component {
     this.state = {
       weapons: 'punch.png',
       health: 10,
-      insult:''
+      insult:'',
+      beg: ''
       }
     this.abuse = this.abuse.bind(this)
   }
+
+
   abuse(amount) {
     console.log(this.state.health)
   this.setState({health})
   }
+
+  begging(words) {
+    console.log(this.state.beg)
+    this.setState({beg})
+    // <p>{words}</p>
+  }
+
   render() {
     return (
       <Router>
@@ -31,10 +41,10 @@ class App extends React.Component {
         <h1>I am nice</h1>
 
         <Route path='/' component={Home} />
-        <Route path="/knife" component={Knife} />
-        <Route path='/gun' component={Gun} />
+        <Route path="/knife" component={Knife} begging={this.begging} />
+        {/* <Route path='/gun' component={Gun} />
         <Route path='/hammer' component={Hammer} />
-        <Route path='/punch' component={Punch} />
+        <Route path='/punch' component={Punch} /> */}
 
         {/* <Route path='/verbal-abuse' component={Verbal} /> */}
 
