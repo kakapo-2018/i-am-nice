@@ -48,7 +48,7 @@ class App extends React.Component {
 
         {/* <Route path='/verbal-abuse' component={Verbal} /> */}
 
-        <Verbal abuse={this.abuse}/>
+        <Route exact path='/verbal-abuse' component={Verbal} />
 
     
       </div>

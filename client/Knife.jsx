@@ -1,4 +1,5 @@
 import React from 'react'
+import changeWeapon from './index'
 
 export default class Knife extends React.Component {
   constructor(props) {
@@ -24,6 +25,11 @@ export default class Knife extends React.Component {
   
   
   render (){
+
+    {
+      changeWeapon('knife')
+    }
+
     return (
       <div>
     <h1 className="title">knife</h1>
