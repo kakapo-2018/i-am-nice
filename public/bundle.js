@@ -11965,8 +11965,44 @@ var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var decalImage = new Image();
+
+decalImage.src = 'bullethole.png';
+
+var weaponImage = 'wGun.png';
+
+document.addEventListener('mousemove', function (e) {
+    e = e || window.event;
+    var weaponImg = document.getElementById('curWeapon');
+
+    var offset = 120;
+
+    weaponImg.src = weaponImage;
+    weaponImg.style.position = 'absolute';
+    weaponImg.style.zIndex = 1;
+    weaponImg.style.top = (e.pageY - offset || e.clientY - offset) + 'px';
+    weaponImg.style.left = (e.pageX - offset || e.clientX - offset) + 'px';
+}, false);
+
+document.addEventListener('click', function (e) {
+    e = e || window.event;
+    var decalImg = document.createElement('img');
+
+    var offset = 120;
+
+    decalImg.src = decalImage.src;
+    decalImg.style.zIndex = 0;
+
+    decalImg.style.position = 'absolute';
+    decalImg.style.height = '150px';
+    decalImg.style.width = '150px';
+    decalImg.style.top = (e.pageY - offset || e.clientY - offset) + 'px';
+    decalImg.style.left = (e.pageX - offset || e.clientX - offset) + 'px';
+    this.body.appendChild(decalImg);
+}, false);
+
 document.addEventListener('DOMContentLoaded', function () {
-  (0, _reactDom.render)(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
+    (0, _reactDom.render)(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
 });
 
 /***/ }),
