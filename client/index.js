@@ -5,9 +5,34 @@ import App from './App'
 
 var decalImage = new Image;
 
-decalImage.src = 'bullethole.png';
+decalImage = 'bullethole.png';
 
 let weaponImage = 'wGun.png'
+
+
+function changeWeapon (weapon) {
+  if (weapon == 'knife'){
+
+    decalImage = 'blood.png';
+    weaponImage = 'wKnife.png'
+  }
+  else if (weapon == 'punch'){
+
+    decalImage = 'bruise.png';
+    weaponImage = 'wGlove.png'
+  }
+  else if (weapon == 'hammer'){
+
+    decalImage = 'smash.png';
+    weaponImage = 'wHammer.png'
+  }
+  else if (weapon == 'gun'){
+
+    decalImage = 'bullethole.png';
+    weaponImage = 'wGun.png'
+  }
+
+}
 
 document.addEventListener('mousemove', function(e) {
     e = e || window.event;
@@ -33,7 +58,7 @@ document.addEventListener('click', function(e) {
 
     let offset = 120;
 
-    decalImg.src = decalImage.src;
+    decalImg.src = decalImage;
     decalImg.style.zIndex = -2;
 
     decalImg.style.position = 'absolute';
@@ -53,3 +78,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('app')
   )
 })
+
+export default changeWeapon
