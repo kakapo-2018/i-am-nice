@@ -15,12 +15,14 @@ class App extends React.Component {
     super(props)
     this.state = {
       weapons: 'punch.png',
-      health: 10
-    }
-    this.hurt = this.hurt.bind(this)
+      health: 10,
+      insult:''
+      }
+    this.abuse = this.abuse.bind(this)
   }
-  hurt(amount) {
-    this.setState({health})
+  abuse(amount) {
+    console.log(this.state.health)
+  this.setState({health})
   }
   render() {
     return (
@@ -34,7 +36,9 @@ class App extends React.Component {
         <Route path='/hammer' component={Hammer} />
         <Route path='/punch' component={Punch} />
 
-        <Route path='/verbal-abuse' component={Verbal} />
+        {/* <Route path='/verbal-abuse' component={Verbal} /> */}
+
+        <Verbal abuse={this.abuse}/>
 
     
       </div>
