@@ -1,0 +1,23 @@
+{
+  "name": "i-am-nice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server & webpack --watch",
+    "test": "jest --watch --noStackTrace"
+  },
+  "repository": "https://github.com/kakapo-2018/i-am-nice.git",
+  "author": "lianna.blanca@gmail.com <lianna-blanca>",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "jest": "^23.5.0",
+    "node": "^10.9.0",
+    "path": "^0.12.7",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "webpack": "^4.17.1"
+  }
+}
