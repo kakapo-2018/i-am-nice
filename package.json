@@ -1,13 +1,20 @@
 {
   "name": "i-am-nice",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.1.1",
+  "description": "A webpack React starter",
   "repository": "https://github.com/kakapo-2018/i-am-nice.git",
+  "main": "server/index.js",
   "scripts": {
     "postinstall": "webpack",
     "dev": "nodemon --watch server & webpack --watch",
     "start": "node server/index",
-    "test": "jest"
+    "test": "jest",
+    "watch": "nodemon -e js,jsx -x npm test",
+    "h:deploy": "git push heroku master",
+    "h:migrate": "heroku run knex migrate:latest",
+    "h:rollback": "heroku run knex migrate:rollback",
+    "h:seed": "heroku run knex seed:run",
+    "knex": "knex"
   },
   "jest": {
     "collectCoverage": true
@@ -36,6 +43,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.1",
     "body-parser": "^1.15.2",
+    "bulma": "^0.7.1",
     "cors": "^2.8.3",
     "css-loader": "^0.28.11",
     "express": "^4.14.0",
@@ -43,6 +51,7 @@
     "jsx-loader": "^0.13.2",
     "knex": "^0.13.0",
     "nock": "^9.2.5",
+    "node-sass": "^4.9.0",
     "pg": "^6.2.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -52,6 +61,7 @@
     "redux": "^3.6.0",
     "redux-mock-store": "^1.5.1",
     "redux-thunk": "^2.2.0",
+    "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "superagent": "^2.2.0",
     "webpack": "^2.3.3",
