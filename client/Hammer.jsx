@@ -8,11 +8,7 @@ export default function Hammer (props) {
   }
   return (
     <div>
-
-      <h1 className="title">hammer</h1>
-
-      {alert("aie")}
-      
+      <h1 className="title">hammer</h1>    
     </div>
   )
 }
