@@ -1,10 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import {render} from 'react-dom'
 
-import App from './components/App'
+import App from './App'
+
+import './sass/main.scss'
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
+  render(
     <App />,
     document.getElementById('app')
   )
