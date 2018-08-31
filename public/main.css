@@ -7,3 +7,37 @@
   top: 0;
   z-index: -10;
 }
+
+p{
+  font-size: 4em;
+  letter-spacing: 0.3em
+}
+
+#app-title{
+  color: rgb(240, 209, 172);
+  font-size: 5em;
+  letter-spacing: 0.5em;
+  text-align: center
+}
+
+#weapon-button{
+  display: flex;
+  justify-content: space-around;
+}
+
+#the-beg {
+  margin-left: 50px;
+}
+
+#verbal-abuse-box {
+  margin-left: 50px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+input {
+  margin-top: 20px;
+  font-size: 2em;
+}
+

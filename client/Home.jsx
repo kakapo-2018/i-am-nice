@@ -8,7 +8,7 @@ import Verbal from './Verbal'
 const Home = () => {
     return (
 
-      <div className="top">
+      <div className="top" id='weapon-button'>
         <Link to='/punch'><img src='iconGlove.png'></img></Link>
         <Link to='/knife'><img src='iconKnife.png'></img></Link>
         <Link to='/hammer'><img src='iconHammer.png'></img></Link>

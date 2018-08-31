@@ -39,7 +39,7 @@ class App extends React.Component {
     return (
       <Router>
       <div className='app-container section'>
-        <h1>I am nice</h1>
+        <h1 id='app-title'>I am nice</h1>
 
         <Route path='/' component={Home} />
         <Route path="/knife" component={Knife}/>
