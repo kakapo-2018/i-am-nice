@@ -5,9 +5,9 @@ import App from './App'
 
 var decalImage = new Image;
 
-decalImage = 'bullethole.png';
+decalImage = 'placeholder.png';
 
-let weaponImage = 'wGun.png'
+let weaponImage = 'placeholder.png'
 
 
 function changeWeapon (weapon) {
@@ -48,10 +48,6 @@ document.addEventListener('mousemove', function(e) {
 
 }, false);
 
-
-
-
-
 document.addEventListener('click', function(e) {
     e = e || window.event;
     var decalImg = document.createElement('img');
@@ -60,17 +56,11 @@ document.addEventListener('click', function(e) {
 
     decalImg.src = decalImage;
     decalImg.style.zIndex = -2;
-
     decalImg.style.position = 'absolute';
-    decalImg.style.height = '150px';
-    decalImg.style.width = '150px';
     decalImg.style.top = (e.pageY - offset || e.clientY - offset) + 'px';
     decalImg.style.left = (e.pageX - offset || e.clientX- offset) + 'px';
     this.body.appendChild(decalImg);
 }, false);
-
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   render(

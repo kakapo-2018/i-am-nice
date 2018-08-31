@@ -13,8 +13,9 @@ const Home = () => {
         <Link to='/knife'><img src='iconKnife.png'></img></Link>
         <Link to='/hammer'><img src='iconHammer.png'></img></Link>
         <Link to='/gun'><img src='iconGun.png'></img></Link>
-
         <Link to='/verbal-abuse'><img src='verbalabuseIcon.png'></img></Link>
+
+        <Link to='/health'><img src='health.png'></img></Link>
 
       </div>
 
