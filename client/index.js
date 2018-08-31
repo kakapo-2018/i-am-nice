@@ -5,9 +5,9 @@ import App from './App'
 
 var decalImage = new Image;
 
-decalImage = 'bullethole.png';
+decalImage = 'placeholder.png';
 
-let weaponImage = 'wGun.png'
+let weaponImage = 'placeholder.png'
 
 
 function changeWeapon (weapon) {
@@ -72,10 +72,7 @@ document.addEventListener('click', function(e) {
 
     decalImg.src = decalImage;
     decalImg.style.zIndex = -2;
-
     decalImg.style.position = 'absolute';
-    decalImg.style.height = '150px';
-    decalImg.style.width = '150px';
     decalImg.style.top = (e.pageY - offset || e.clientY - offset) + 'px';
     decalImg.style.left = (e.pageX - offset || e.clientX- offset) + 'px';
     this.body.appendChild(decalImg);
@@ -83,9 +80,6 @@ document.addEventListener('click', function(e) {
     let theBeg = document.getElementById("the-beg");
     theBeg.innerHTML = startBeg();
 }, false);
-
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   render(

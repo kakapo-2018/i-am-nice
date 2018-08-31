@@ -24,7 +24,7 @@ export default class Verbal extends React.Component {
     const words = this.state.insult
     
     
-    var insultText = document.createElement('h2');
+    var insultText = document.createElement('h1');
 
     insultText.innerHTML = words;
 
