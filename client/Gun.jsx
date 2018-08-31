@@ -16,3 +16,20 @@ export default function Gun (props) {
     </div>
   )
 }
+
+
+class Gun extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      health: null,
+      }
+    this.handleClick = this.handleClick.bind(this)
+  }
+  return (
+    <div>
+      <h1 className="title">gun</h1>
+      <body onClick={handleClick}></body>
+    </div>
+  )
+}
