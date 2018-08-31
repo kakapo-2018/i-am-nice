@@ -8,6 +8,10 @@
   z-index: -10;
 }
 
+h1 {
+  font-size: 4em;
+}
+
 p{
   font-size: 4em;
   letter-spacing: 0.3em
