@@ -35,7 +35,6 @@ function changeWeapon (weapon) {
 }
 
 function startBeg() {
-  console.log("see me??")
   const begsForLife = [
     "Please", 
     "I have a family who needs me", 

@@ -28,14 +28,12 @@ class App extends React.Component {
   this.setState({health})
   }
 
-
-
-
-  // move to index.js
-  // document.addEventListener('click', function(e) {
-  //     //console.log("calling on mouse click")
-  //  //   return this.startBeg()
-  // }
+  handleClick(){
+    console.log('The page was clicked.' + healthPoints);
+    this.setState(prevState => ({
+      health: prevState - this.abuse()
+    }));
+  }
 
   render() {
     return (
