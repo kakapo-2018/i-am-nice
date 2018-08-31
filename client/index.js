@@ -9,9 +9,20 @@ decalImage = 'placeholder.png';
 
 let weaponImage = 'placeholder.png'
 
+let haveWeapon = 0;
+
+let hpp = 10;
+
 
 function changeWeapon (weapon) {
-  if (weapon == 'knife'){
+
+  if (weapon == 'health'){
+    hpp = 10
+    console.log('heck')
+    decalImage = 'health.png';
+    weaponImage = 'health.png'
+  }
+  else if (weapon == 'knife'){
 
     decalImage = 'blood.png';
     weaponImage = 'wKnife.png'
@@ -48,12 +59,11 @@ function startBeg() {
 }
 
 
-
 document.addEventListener('click', function(e) {
   e = e || window.event;
   let decalImg = document.createElement('img');
   
-  let offset = 120;
+  let offset = 230;
   
   decalImg.src = decalImage;
   decalImg.style.zIndex = -2;
@@ -64,14 +74,21 @@ document.addEventListener('click', function(e) {
   
   let theBeg = document.getElementById("the-beg");
   theBeg.innerHTML = startBeg();
+
+  hpp --;
+
+  let vision = document.getElementById('toggle_div')
+
+  let hp = 0.3 - (hpp * 0.03)
+
+  let fillStyle = "rgba(0, 0, 0, " + hp + ")"; 
+
+  vision.style.backgroundColor = fillStyle
+
+
+
 }, false);
 
-
-// document.addEventListener('contextmenu', function(e) {
-  //   e.preventDefault();
-  //   let decalImg = document.getElementById('curWeapon');
-  //   decalImg.src = "";
-  // }, false);
   
   document.oncontextmenu = function (e) {
     e.preventDefault();
