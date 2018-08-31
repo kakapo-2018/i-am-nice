@@ -31,7 +31,7 @@ export default class Verbal extends React.Component {
     insultText.style.position = 'absolute';
 
     insultText.style.top = (Math.floor(Math.random() * (600 - 200 + 1)) + 200) + 'px';
-    insultText.style.left = (Math.floor(Math.random() * (1000 - 200 + 1)) + 200) + 'px';
+    insultText.style.left = (Math.floor(Math.random() * (1000 - 5 + 1)) + 100) + 'px';
     
     var elem = document.getElementById("app");
   
