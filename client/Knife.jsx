@@ -1,5 +1,7 @@
 import React from 'react'
 import changeWeapon from './index'
+import startBeg from './index'
+
 
 export default class Knife extends React.Component {
   constructor(props) {
@@ -10,30 +12,19 @@ export default class Knife extends React.Component {
     }
   }
   
-  startBeg(){
-    const begsForLife = [
-      "Please", 
-      "I have a family who needs me", 
-      "I don't want to die....", 
-      "I am afraid of death."
-    ]
-    
-    let thisBeg = begsForLife[Math.floor(Math.random() *begsForLife.length)]
-    
-    return thisBeg
-  }
-  
+
+
   
   render (){
 
     {
       changeWeapon('knife')
+      // startBeg()
     }
 
     return (
       <div>
     <h1 className="title">knife</h1>
-    {this.startBeg()}
     </div>
     )
   }

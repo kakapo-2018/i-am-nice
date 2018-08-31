@@ -28,11 +28,14 @@ class App extends React.Component {
   this.setState({health})
   }
 
-  begging(words) {
-    console.log(this.state.beg)
-    this.setState({beg})
-    // <p>{words}</p>
-  }
+
+
+
+  // move to index.js
+  // document.addEventListener('click', function(e) {
+  //     //console.log("calling on mouse click")
+  //  //   return this.startBeg()
+  // }
 
   render() {
     return (
@@ -41,12 +44,11 @@ class App extends React.Component {
         <h1>I am nice</h1>
 
         <Route path='/' component={Home} />
-        <Route path="/knife" component={Knife} begging={this.begging} />
-        {/* <Route path='/gun' component={Gun} />
+        <Route path="/knife" component={Knife}/>
+        <Route path='/gun' component={Gun} />
         <Route path='/hammer' component={Hammer} />
-        <Route path='/punch' component={Punch} /> */}
+        <Route path='/punch' component={Punch} />
 
-        {/* <Route path='/verbal-abuse' component={Verbal} /> */}
 
         <Route exact path='/verbal-abuse' component={Verbal} />
 
