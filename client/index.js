@@ -34,6 +34,21 @@ function changeWeapon (weapon) {
 
 }
 
+function startBeg() {
+  console.log("see me??")
+  const begsForLife = [
+    "Please", 
+    "I have a family who needs me", 
+    "I don't want to die....", 
+    "I am afraid of death."
+  ]
+  
+  let thisBeg = begsForLife[Math.floor(Math.random() *begsForLife.length)]
+  
+  return thisBeg
+}
+
+
 document.addEventListener('mousemove', function(e) {
     e = e || window.event;
     var weaponImg = document.getElementById('curWeapon');
@@ -48,6 +63,7 @@ document.addEventListener('mousemove', function(e) {
 
 }, false);
 
+
 document.addEventListener('click', function(e) {
     e = e || window.event;
     var decalImg = document.createElement('img');
@@ -60,6 +76,9 @@ document.addEventListener('click', function(e) {
     decalImg.style.top = (e.pageY - offset || e.clientY - offset) + 'px';
     decalImg.style.left = (e.pageX - offset || e.clientX- offset) + 'px';
     this.body.appendChild(decalImg);
+
+    let theBeg = document.getElementById("the-beg");
+    theBeg.innerHTML = startBeg();
 }, false);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -68,5 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('app')
   )
 })
+
 
 export default changeWeapon
