@@ -41,10 +41,12 @@ export default class Verbal extends React.Component {
   }
   render() {
     return (
+      <div id="verbal-abuse-box">
       <form onSubmit={this.onSubmit}>
         <input onChange={this.updateInsult} type="text" name="insult" placeholder="Don't..." />
         <input type="submit" />
       </form>
+      </div> 
     )
   }
 }

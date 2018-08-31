@@ -28,20 +28,18 @@ class App extends React.Component {
   this.setState({health})
   }
 
-
-
-
-  // move to index.js
-  // document.addEventListener('click', function(e) {
-  //     //console.log("calling on mouse click")
-  //  //   return this.startBeg()
-  // }
+  handleClick(){
+    console.log('The page was clicked.' + healthPoints);
+    this.setState(prevState => ({
+      health: prevState - this.abuse()
+    }));
+  }
 
   render() {
     return (
       <Router>
       <div className='app-container section'>
-        <h1>I am nice</h1>
+        <h1 id='app-title'>I am nice</h1>
 
         <Route path='/' component={Home} />
         <Route path="/knife" component={Knife}/>

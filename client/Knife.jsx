@@ -24,7 +24,6 @@ export default class Knife extends React.Component {
 
     return (
       <div>
-    <h1 className="title">knife</h1>
     </div>
     )
   }
