@@ -48,40 +48,55 @@ function startBeg() {
 }
 
 
-document.addEventListener('mousemove', function(e) {
-    e = e || window.event;
-    var weaponImg = document.getElementById('curWeapon');
-
-    let offset = 120;
-
-    weaponImg.src = weaponImage
-    weaponImg.style.position = 'absolute';
-    weaponImg.style.zIndex = - 1;
-    weaponImg.style.top = (e.pageY - offset || e.clientY - offset) + 'px';
-    weaponImg.style.left = (e.pageX - offset || e.clientX- offset) + 'px';
-
-}, false);
-
 
 document.addEventListener('click', function(e) {
-    e = e || window.event;
-    var decalImg = document.createElement('img');
-
-    let offset = 120;
-
-    decalImg.src = decalImage;
-    decalImg.style.zIndex = -2;
-    decalImg.style.position = 'absolute';
-    decalImg.style.top = (e.pageY - offset || e.clientY - offset) + 'px';
-    decalImg.style.left = (e.pageX - offset || e.clientX- offset) + 'px';
-    this.body.appendChild(decalImg);
-
-    let theBeg = document.getElementById("the-beg");
-    theBeg.innerHTML = startBeg();
+  e = e || window.event;
+  let decalImg = document.createElement('img');
+  
+  let offset = 120;
+  
+  decalImg.src = decalImage;
+  decalImg.style.zIndex = -2;
+  decalImg.style.position = 'absolute';
+  decalImg.style.top = (e.pageY - offset || e.clientY - offset) + 'px';
+  decalImg.style.left = (e.pageX - offset || e.clientX- offset) + 'px';
+  this.body.appendChild(decalImg);
+  
+  let theBeg = document.getElementById("the-beg");
+  theBeg.innerHTML = startBeg();
 }, false);
 
-document.addEventListener('DOMContentLoaded', () => {
-  render(
+
+// document.addEventListener('contextmenu', function(e) {
+  //   e.preventDefault();
+  //   let decalImg = document.getElementById('curWeapon');
+  //   decalImg.src = "";
+  // }, false);
+  
+  document.oncontextmenu = function (e) {
+    e.preventDefault();
+    let decalImg = document.getElementById('curWeapon');
+    decalImg.src = "";
+    return false;
+  }
+  
+  document.addEventListener('mousemove', function(e) {
+      e = e || window.event;
+      var weaponImg = document.getElementById('curWeapon');
+  
+      let offset = 120;
+  
+      weaponImg.src = weaponImage
+      weaponImg.style.position = 'absolute';
+      weaponImg.style.zIndex = - 1;
+      weaponImg.style.top = (e.pageY - offset || e.clientY - offset) + 'px';
+      weaponImg.style.left = (e.pageX - offset || e.clientX- offset) + 'px';
+  
+  }, false);
+  
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    render(
     <App />,
     document.getElementById('app')
   )
